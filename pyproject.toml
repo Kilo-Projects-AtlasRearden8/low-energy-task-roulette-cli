@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "task-roulette"
+version = "0.1.0"
+description = "Pick one small task for low-energy or ADHD days from a local JSON list, with tracking and export."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "Asdale Dynamics, LLC"}]
+
+[project.scripts]
+task-roulette = "task_roulette.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
