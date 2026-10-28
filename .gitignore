@@ -1,6 +1,12 @@
-__pycache__/
-*.py[c]
 *.egg-info/
-.eggs/
+*.py[c]
+*.pyc
 .build/
+.eggs/
+.env
+.env.*
+.venv/
 .vscode/
+__pycache__/
+dist/*.tmp
+node_modules/
