@@ -12,12 +12,17 @@ Asdale Dynamics, LLC focuses on beginner-friendly AI education, practical
 open-source tools, and accessible life-admin helpers such as this low-energy
 productivity tool.
 
-## What it does
+## Who this is for
 
-On low-energy days, choosing what to do next can be harder than doing it.
+Days when even choosing what to do feels like too much. Low energy. ADHD
+brain fog. You know there are small things that would help, but deciding
+which one is its own exhaustion.
+
 `task-roulette` chooses for you: one small task, drawn at random from a local
-JSON list you control, filtered to match your energy level. It also tracks
-what you finish and can export your history.
+JSON list you control, filtered to match how much energy you have today. It
+also tracks what you finish and can export your history.
+
+Nothing here is medical advice. If you're unwell, reach out to a clinician.
 
 ## Install
 
@@ -36,16 +41,16 @@ python -m task_roulette pick
 ## Quick start
 
 ```bash
-# Initialize the data folder with a sample task list
+# Create your data folder with a sample task list
 task-roulette init
 
-# Pick one low-energy task
+# Pick one low-energy task (the default)
 task-roulette pick
 
-# Pick a task with more energy to spend
+# Pick with more energy to spend today
 task-roulette pick --energy medium
 
-# Reproducible pick (same seed, same choice)
+# Reproducible pick (same seed, same choice — handy for testing)
 task-roulette pick --seed 7
 
 # Pick a task and mark it done in one step
@@ -87,11 +92,18 @@ tasks are offered; `--energy medium` adds medium tasks; `--energy high`
 offers everything. Tasks you mark done today are skipped on subsequent picks
 when you use `--exclude-done`.
 
+The default sample list includes gentle tasks like drinking water, opening the
+curtains, taking five deep breaths, and stretching — small, low-stakes wins
+for low-energy days.
+
 ## Testing
 
 ```bash
 pytest
 ```
+
+All tests cover the selection logic: energy filtering, exclusion of already-done
+tasks, and deterministic picks with a seed.
 
 ## License
 
@@ -101,5 +113,5 @@ MIT. Copyright (c) 2026 Asdale Dynamics, LLC. See LICENSE.
 
 Created by Dylan Asdale for Asdale Dynamics, LLC — beginner-friendly AI
 education, books and guides, and practical open-source tools. Learn more at
-dylanasdale.github.io. This is an accessibility/productivity tool, not
-medical advice.
+dylanasdale.github.io. This is an accessibility/productivity tool, not medical
+advice.
